@@ -10,7 +10,6 @@ describe "Blog Post App" do
   end
 
   describe "Create Action" do
-
     it "creates a new blog post" do
       visit '/posts/new'
 
@@ -34,7 +33,6 @@ describe "Blog Post App" do
       expect(page.current_path).to eq('/posts')
       expect(page.body).to include("blog blog blog blog blog")
     end
-
   end
 
   describe "Read Action " do
@@ -67,14 +65,9 @@ describe "Blog Post App" do
         expect(last_response.body).to include(post_content)
       end
     end
-
-
   end
 
-
   describe "update action" do
-
-
     it 'responds with a 200 status code' do
       get "/posts/#{@post2.id}/edit"
       expect(last_response.status).to eq(200)
@@ -84,7 +77,6 @@ describe "Blog Post App" do
       visit "/posts/#{@post2.id}/edit"
       expect(page.body).to include("#{@post2.name}")
       expect(page.body).to include("#{@post2.content}")
-
     end
 
     it "saves edits to a blog post" do

@@ -1,0 +1,12 @@
+<h3>INDEX PAGE</h3>
+
+<h4><a href="/posts/new">Create new post</a></h4>
+
+<% @posts.each do |post| %>
+  Name: <%= post.name %><br/>
+  Content: <%= post.content %><br/>
+  <a href="/posts/<%= post.id %>">This post's show page</a><br/>
+  <a href="/posts/<%= post.id %>/edit">This post's edit page</a><br/>
+  <br/>
+<% end %>
+
